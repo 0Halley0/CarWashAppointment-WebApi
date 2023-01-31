@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    internal class CarWash
+    public class CarWash
     {
         [Key]
         public int CarWashId { get; set; }
