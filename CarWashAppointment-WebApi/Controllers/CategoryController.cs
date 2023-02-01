@@ -9,7 +9,7 @@ namespace CarWashAppointment_WebApi.Controllers
         CategoryManager cm=new CategoryManager(new EfCategoryRepository());
         public IActionResult Index()
         {
-            var values = cm.GetAllCategories();
+            var values = cm.TGetAll();
             return View(values);
         }
     }
