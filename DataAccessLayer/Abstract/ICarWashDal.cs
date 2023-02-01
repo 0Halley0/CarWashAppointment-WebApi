@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAppointmentDal:IGenericDal<Appointment>
+    public interface ICarWashDal:IGenericDal<CarWash>
     {
-        
     }
 }

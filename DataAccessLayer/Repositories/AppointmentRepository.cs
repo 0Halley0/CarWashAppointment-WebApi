@@ -18,11 +18,21 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public void Delete(Appointment t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteAppointment(Appointment appointment)
         {
             using var c = new Context();
             c.Remove(appointment);
             c.SaveChanges();
+        }
+
+        public List<Appointment> GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public List<Appointment> GetAllAppointments()
@@ -35,6 +45,21 @@ namespace DataAccessLayer.Repositories
         {
             using var c = new Context();
             return c.Appointments.Find(id);
+        }
+
+        public Appointment GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Appointment t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Appointment t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateAppointment(Appointment appointment)
