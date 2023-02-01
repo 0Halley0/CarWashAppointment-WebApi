@@ -18,5 +18,6 @@ namespace EntityLayer.Concrete
         public string CarWashAddress { get; set; }
         public string CarWashCity { get; set; }
         public string CarWashDistrict { get; set; }
+        public List<Appointment> Appointments { get; set; }
     }
 }

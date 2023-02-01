@@ -19,5 +19,6 @@ namespace EntityLayer.Concrete
         public string CustomerImage2 { get; set; }
         public string Password { get; set; }
         public string PlateNumber { get; set; }
+        public List<Appointment> Appointments { get; set; }
     }
 }

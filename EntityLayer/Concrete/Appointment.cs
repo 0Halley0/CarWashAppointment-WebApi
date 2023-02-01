@@ -18,5 +18,11 @@ namespace EntityLayer.Concrete
         public bool AppointmentStatus { get; set; }
         public DateTime AppointmentDate { get; set; }
         public DateTime CreatedAt { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
+        public int CarWashId { get; set; }
+        public CarWash CarWash { get; set; }
     }
 }
