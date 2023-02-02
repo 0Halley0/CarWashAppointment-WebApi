@@ -15,8 +15,8 @@ namespace EntityLayer.Concrete
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string CustomerImage1 { get; set; }
-        public string CustomerImage2 { get; set; }
+        public string? CustomerImage1 { get; set; }
+        public string? CustomerImage2 { get; set; }
         public string Password { get; set; }
         public string PlateNumber { get; set; }
         public List<Appointment> Appointments { get; set; }

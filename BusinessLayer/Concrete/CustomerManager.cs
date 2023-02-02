@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
 			_customerDal = customerDal;
 		}
 
+		public Customer GetByPlateNumber(string plateNumber)
+		{
+			return _customerDal.GetByPlateNumber(plateNumber);
+		}
+
 		public void TAdd(Customer t)
 		{
 			_customerDal.Insert(t);

@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
 	public interface ICustomerService:IGenericService<Customer>
 	{
+		Customer GetByPlateNumber(string plateNumber);
 	}
 }
