@@ -52,7 +52,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("AboutId");
 
-                    b.ToTable("Abouts");
+                    b.ToTable("Abouts", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Appointment", b =>
@@ -101,7 +101,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointments", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.CarWash", b =>
@@ -140,7 +140,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CarWashId");
 
-                    b.ToTable("CarWashes");
+                    b.ToTable("CarWashes", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -164,7 +164,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -202,7 +202,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ContactId");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contacts", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Customer", b =>
@@ -245,7 +245,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Appointment", b =>
