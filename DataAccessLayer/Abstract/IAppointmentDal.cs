@@ -9,6 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IAppointmentDal:IGenericDal<Appointment>
     {
-        
+        List<Appointment> GetListWithCategory();
     }
 }
