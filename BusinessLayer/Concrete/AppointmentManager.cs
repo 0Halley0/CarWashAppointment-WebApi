@@ -18,9 +18,14 @@ namespace BusinessLayer.Concrete
 			_appointmentDal = appointmentDal;
 		}
 
-		public List<Appointment> GetListWithCategory()
+		public List<Appointment> GetListByAppointmentDate()
 		{
-			return _appointmentDal.GetListWithCategory();
+			return _appointmentDal.GetListByAppointmentDate();
+		}
+
+		public List<Appointment> GetListByCategory()
+		{
+			return _appointmentDal.GetListByCategory();
 		}
 
 		public void TAdd(Appointment t)

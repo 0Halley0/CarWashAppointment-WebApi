@@ -9,6 +9,7 @@ namespace BusinessLayer.Abstract
 {
 	public interface IAppointmentService:IGenericService<Appointment>
 	{
-		List<Appointment> GetListWithCategory();
+		List<Appointment> GetListByCategory();
+		List<Appointment> GetListByAppointmentDate();
 	}
 }

@@ -13,7 +13,15 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EfAppointmentRepository : GenericRepository<Appointment>, IAppointmentDal
 	{
-		public List<Appointment> GetListWithCategory()
+		public List<Appointment> GetListByAppointmentDate()
+		{
+			using (var c = new Context())
+			{
+				return c.Appointments.Include(x => x.AppointmentDate).ToList();
+			}
+		}
+
+		public List<Appointment> GetListByCategory()
 		{
 			using(var c=new Context())
 			{

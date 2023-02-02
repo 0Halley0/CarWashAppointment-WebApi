@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWashAppointment-WebApi", "CarWashAppointment-WebApi\CarWashAppointment-WebApi.csproj", "{B4295552-1A5B-40F4-B259-DEE824E65013}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{046DACA3-F9C8-4733-8B00-ED8CA35E49DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{43EFCC60-5E06-4B94-B841-A53BE0281A85}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{930887B6-BF10-4B95-98B7-9AB36EC14D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{F6F89987-8353-4D01-A76C-9D73BCBB8882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{F6F89987-8353-4D01-A76C-9D73BCBB8882}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B4295552-1A5B-40F4-B259-DEE824E65013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4295552-1A5B-40F4-B259-DEE824E65013}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4295552-1A5B-40F4-B259-DEE824E65013}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4295552-1A5B-40F4-B259-DEE824E65013}.Release|Any CPU.Build.0 = Release|Any CPU
 		{046DACA3-F9C8-4733-8B00-ED8CA35E49DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{046DACA3-F9C8-4733-8B00-ED8CA35E49DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{046DACA3-F9C8-4733-8B00-ED8CA35E49DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
