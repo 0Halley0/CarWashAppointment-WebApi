@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
 		public Customer GetByPlateNumber(string plateNumber)
 		{
-			return _customerDal.GetByPlateNumber(plateNumber);
+			throw new NotImplementedException();
 		}
 
 		public void TAdd(Customer t)
