@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -11,14 +12,14 @@ namespace WebApi.Controllers
 	public class CategoryController : ControllerBase
 	{
 		[HttpGet("getAll")]
-		public IActionResult GetAll()
+		public IActionResult TGetAll()
 		{
 			using var c = new Context();
 			var values=c.Categories.ToList();
 			return Ok(values);
 		}
 		[HttpGet("getById")]
-		public IActionResult Get(int id)
+		public IActionResult TGet(int id)
 		{
 			using var c = new Context();
 			var category = c.Categories.Find(id);
@@ -29,7 +30,7 @@ namespace WebApi.Controllers
 			return Ok(category);
 		}
 		[HttpPost("add")]
-		public IActionResult Add(Category category) 
+		public IActionResult TAdd(Category category) 
 		{
 			using var c = new Context();
 			c.Add(category);
@@ -37,7 +38,7 @@ namespace WebApi.Controllers
 			return Ok(c);
 		}
 		[HttpPut("update")]
-		public IActionResult Update(Category category)
+		public IActionResult TUpdate(Category category)
 		{
 			using var c = new Context();
 			var cat = c.Find<Category>(category.CategoryId);
@@ -54,7 +55,7 @@ namespace WebApi.Controllers
 			}
 		}
 		[HttpDelete("{id}")]
-		public IActionResult Delete(int id)
+		public IActionResult TDelete(int id)
 		{
 			using var c = new Context();
 			var category=c.Categories.Find(id);

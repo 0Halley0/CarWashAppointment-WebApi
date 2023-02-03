@@ -9,5 +9,8 @@ namespace DataAccessLayer.Abstract
 {
     public interface IContactDal:IGenericDal<Contact>
     {
+        List<Contact> GetContactListByTrue();
+        List<Contact> GetContactListByFalse();
+        void ContactStatusChangeToFalse(int id);
     }
 }
