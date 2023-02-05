@@ -8,24 +8,24 @@ namespace WebApi.Controllers
 	[EnableCors]
 	[Route("api/[controller]")]
 	[ApiController]
-	public class CarWashController : ControllerBase
+	public class AboutController : ControllerBase
 	{
-		private readonly ICarWashService _carWashService;
+		private readonly IAboutService _aboutService;
 
-		public CarWashController(ICarWashService carWashService)
+		public AboutController(IAboutService aboutService)
 		{
-			_carWashService = carWashService;
+			_aboutService = aboutService;
 		}
 		[HttpGet("getAll")]
 		public IActionResult GetAll()
 		{
-			var values=_carWashService.TGetAll();
+			var values=_aboutService.TGetAll();
 			return Ok(values);
 		}
 		[HttpGet("getById")]
 		public IActionResult Get(int id)
 		{
-			var values=_carWashService.TGetById(id);
+			var values=_aboutService.TGetById(id);
 			return Ok(values);
 		}
 	}

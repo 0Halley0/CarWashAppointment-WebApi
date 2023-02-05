@@ -2,35 +2,38 @@
 using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
+	[EnableCors]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class CategoryController : ControllerBase
 	{
-		[HttpGet("getAll")]
-		public IActionResult TGetAll()
+		ICategoryService _categoryService;
+
+		public CategoryController(ICategoryService categoryService)
 		{
-			using var c = new Context();
-			var values=c.Categories.ToList();
-			return Ok(values);
+			_categoryService = categoryService;
+		}
+
+		[HttpGet("getAll")]
+		public IActionResult GetAll()
+		{
+			var value = _categoryService.TGetAll();
+			return Ok(value);
 		}
 		[HttpGet("getById")]
-		public IActionResult TGet(int id)
+		public IActionResult Get(int id)
 		{
-			using var c = new Context();
-			var category = c.Categories.Find(id);
-			if(category == null) 
-			{ 
-				return NotFound();
-			}
-			return Ok(category);
+			var value = _categoryService.TGetById(id);
+			return Ok(value);
 		}
 		[HttpPost("add")]
-		public IActionResult TAdd(Category category) 
+		public IActionResult Add(Category category) 
 		{
 			using var c = new Context();
 			c.Add(category);
@@ -38,7 +41,7 @@ namespace WebApi.Controllers
 			return Ok(c);
 		}
 		[HttpPut("update")]
-		public IActionResult TUpdate(Category category)
+		public IActionResult Update(Category category)
 		{
 			using var c = new Context();
 			var cat = c.Find<Category>(category.CategoryId);
@@ -54,21 +57,13 @@ namespace WebApi.Controllers
 				return Ok(c);
 			}
 		}
-		[HttpDelete("{id}")]
-		public IActionResult TDelete(int id)
+		[HttpDelete("delete")]
+		public IActionResult Delete(Category category)
 		{
 			using var c = new Context();
-			var category=c.Categories.Find(id);
-			if (category == null)
-			{
-				return NotFound();
-			}
-			else
-			{
-				c.Remove(category);
-				c.SaveChanges();
-				return Ok(c);
-			}
+			c.Remove(category);
+			c.SaveChanges();
+			return Ok(c);
 		}
 	}
 }

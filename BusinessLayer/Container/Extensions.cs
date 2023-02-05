@@ -1,7 +1,15 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.AboutDTOs;
+using DTOLayer.DTOs.AppointmentDTOs;
+using DTOLayer.DTOs.CarWashDTOs;
+using DTOLayer.DTOs.CategoryDTOs;
+using DTOLayer.DTOs.ContactDTOs;
+using DTOLayer.DTOs.CustomerDTOs;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -32,6 +40,15 @@ namespace BusinessLayer.Container
 
 			services.AddScoped<ICustomerService, CustomerManager>();
 			services.AddScoped<ICustomerDal, EfCustomerRepository>();
+		}
+		public static void CustomValidator(this IServiceCollection services)
+		{
+			services.AddTransient<IValidator<AboutAddDTO>, AboutValidator>();
+			services.AddTransient<IValidator<AppointmentAddDTO>, AppointmentValidator>();
+			services.AddTransient<IValidator<CarWashAddDTO>, CarWashValidator>();
+			services.AddTransient<IValidator<CategoryAddDTO>, CategoryValidator>();
+			services.AddTransient<IValidator<ContactAddDTO>, ContactValidator>();
+			services.AddTransient<IValidator<CustomerAddDTO>, CustomerValidator>();
 		}
 	}
 }

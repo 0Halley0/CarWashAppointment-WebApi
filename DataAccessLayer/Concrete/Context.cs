@@ -15,6 +15,8 @@ namespace DataAccessLayer.Concrete
         {
             optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=CarWashAppointmentDb;integrated security=true;");
         }
+        public Context() { }
+        public Context(DbContextOptions<Context> options) : base(options) { }   
         public DbSet<About> Abouts { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<CarWash> CarWashes { get; set; }

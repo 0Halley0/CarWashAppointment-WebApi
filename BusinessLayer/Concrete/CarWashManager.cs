@@ -11,7 +11,7 @@ namespace BusinessLayer.Concrete
 {
 	public class CarWashManager : ICarWashService
 	{
-		ICarWashDal _carWashDal;
+		private readonly ICarWashDal _carWashDal;
 
 		public CarWashManager(ICarWashDal carWashDal)
 		{

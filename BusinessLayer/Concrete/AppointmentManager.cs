@@ -11,7 +11,7 @@ namespace BusinessLayer.Concrete
 {
 	public class AppointmentManager : IAppointmentService
 	{
-		IAppointmentDal _appointmentDal;
+		private readonly IAppointmentDal _appointmentDal;
 
 		public AppointmentManager(IAppointmentDal appointmentDal)
 		{

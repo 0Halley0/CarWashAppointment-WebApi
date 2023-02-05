@@ -1,15 +1,17 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
+	[EnableCors]
 	[Route("api/[controller]")]
 	[ApiController]
 	public class ContactController : ControllerBase
 	{
-		private readonly IContactService _contactService;
+		IContactService _contactService;
 
 		public ContactController(IContactService contactService)
 		{
@@ -18,8 +20,15 @@ namespace WebApi.Controllers
 		[HttpGet("getAll")]
 		public IActionResult GetAll()
 		{
-			var values = _contactService.TGetAll();
-			return Ok(values);
+			var value=_contactService.TGetAll();
+			return Ok(value);
+		}
+		[HttpGet("getById")]
+		public IActionResult Get(int id)
+		{
+			var value=_contactService.TGetById(id);
+			return Ok(value);
 		}
 	}
+
 }

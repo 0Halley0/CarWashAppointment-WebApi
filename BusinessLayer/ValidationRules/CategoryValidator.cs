@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.ValidationRules
 {
-	public class CategoryValidator:AbstractValidator<CategoryAddDTOs>
+	public class CategoryValidator:AbstractValidator<CategoryAddDTO>
 	{
 		public CategoryValidator()
 		{
