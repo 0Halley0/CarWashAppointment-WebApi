@@ -5,6 +5,7 @@ using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
@@ -23,8 +24,18 @@ namespace WebApi.Controllers
 		[HttpGet("getAll")]
 		public IActionResult GetAll()
 		{
-			var value = _categoryService.TGetAll();
-			return Ok(value);
+			List<CategoryModel> list = new List<CategoryModel>();
+			foreach(Category item in _categoryService.TGetAll())
+			{
+				CategoryModel model = new CategoryModel();
+				model.CategoryId = item.CategoryId;
+				model.CategoryName = item.CategoryName;
+				model.CategoryDescription = item.CategoryDescription;
+				model.CategoryStatus = item.CategoryStatus;
+				list.Add(model);
+			}
+			return Ok(list);
+			 
 		}
 		[HttpGet("getById")]
 		public IActionResult Get(int id)
@@ -33,37 +44,37 @@ namespace WebApi.Controllers
 			return Ok(value);
 		}
 		[HttpPost("add")]
-		public IActionResult Add(Category category) 
+		public IActionResult Add(CategoryModel categoryModel) 
 		{
-			using var c = new Context();
-			c.Add(category);
-			c.SaveChanges();
-			return Ok(c);
+			Category category= new Category();
+			category.CategoryId= categoryModel.CategoryId;
+			category.CategoryName= categoryModel.CategoryName;
+			category.CategoryDescription= categoryModel.CategoryDescription;
+			category.CategoryStatus= categoryModel.CategoryStatus;
+			_categoryService.TAdd(category);
+			return Ok(category);
 		}
 		[HttpPut("update")]
-		public IActionResult Update(Category category)
+		public IActionResult Update(CategoryModel categoryModel)
 		{
-			using var c = new Context();
-			var cat = c.Find<Category>(category.CategoryId);
-			if (cat == null)
-			{
-				return NotFound();
-			}
-			else
-			{
-				cat.CategoryName = category.CategoryName;
-				c.Update(cat);
-				c.SaveChanges();
-				return Ok(c);
-			}
+			Category category = new Category();
+			category.CategoryId = categoryModel.CategoryId;
+			category.CategoryName = categoryModel.CategoryName;
+			category.CategoryDescription = categoryModel.CategoryDescription;
+			category.CategoryStatus = categoryModel.CategoryStatus;
+			_categoryService.TUpdate(category);
+			return Ok(category);
 		}
 		[HttpDelete("delete")]
-		public IActionResult Delete(Category category)
+		public IActionResult Delete(CategoryModel categoryModel)
 		{
-			using var c = new Context();
-			c.Remove(category);
-			c.SaveChanges();
-			return Ok(c);
+			Category category = new Category();
+			category.CategoryId = categoryModel.CategoryId;
+			category.CategoryName = categoryModel.CategoryName;
+			category.CategoryDescription = categoryModel.CategoryDescription;
+			category.CategoryStatus = categoryModel.CategoryStatus;
+			_categoryService.TDelete(category);
+			return Ok(category);
 		}
 	}
 }
