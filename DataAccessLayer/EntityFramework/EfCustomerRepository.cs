@@ -13,6 +13,15 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EfCustomerRepository : GenericRepository<Customer>, ICustomerDal
 	{
+		public Customer GetByEmail(string email)
+		{
+			using (var context = new Context())
+			{
+				var values = context.Customers.Where(x => x.Email == email);
+				return (Customer)values;
+			}
+		}
+
 		public Customer GetByPlateNumber(string plateNumber)
 		{
 			throw new NotImplementedException();

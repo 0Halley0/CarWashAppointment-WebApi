@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ICustomerDal:IGenericDal<Customer>
-    {
-		Customer GetByPlateNumber(string plateNumber);
-		Customer GetByEmail(string email);
+	public interface IAppointmentListDal : IGenericDal<AppointmentList>
+	{
 	}
 }

@@ -29,6 +29,9 @@ namespace BusinessLayer.Container
 			services.AddScoped<IAppointmentService, AppointmentManager>();
 			services.AddScoped<IAppointmentDal, EfAppointmentRepository>();
 
+			services.AddScoped<IAppointmentListService, AppointmentListManager>();
+			services.AddScoped<IAppointmentListDal, EfAppointmentListRepository>();
+
 			services.AddScoped<ICarWashService, CarWashManager>();
 			services.AddScoped<ICarWashDal, EfCarWashRepository>();
 

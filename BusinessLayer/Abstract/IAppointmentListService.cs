@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-	public interface ICustomerService:IGenericService<Customer>
+	public interface IAppointmentListService: IGenericService<AppointmentList>
 	{
-		Customer GetByPlateNumber(string plateNumber);
-		Customer GetByEmail(string email);
 	}
 }

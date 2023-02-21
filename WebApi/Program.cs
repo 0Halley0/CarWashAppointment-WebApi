@@ -25,6 +25,13 @@ builder.Services.AddCors(opt =>
 		opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 	});
 });
+builder.Services.AddSwaggerGen(options =>
+{
+	options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+	{
+		Title="CarWashAppointment-WebApi", Version="v1"
+	});
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -19,6 +19,9 @@ namespace WebApi.Mapping.AutoMapperProfile
 			CreateMap<AppointmentAddDTO, Appointment>();
 			CreateMap<Appointment, AppointmentAddDTO>();
 
+			CreateMap<AppointmentListDTO, AppointmentList>();
+			CreateMap<AppointmentList, AppointmentListDTO>();
+
 			CreateMap<CarWashAddDTO, CarWash>();
 			CreateMap<CarWash,CarWashAddDTO>();
 

@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
 			_customerDal = customerDal;
 		}
 
+		public Customer GetByEmail(string email)
+		{
+			return _customerDal.GetByEmail(email);
+		}
+
 		public Customer GetByPlateNumber(string plateNumber)
 		{
 			throw new NotImplementedException();
